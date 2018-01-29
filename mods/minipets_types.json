@@ -1,0 +1,879 @@
+[
+  {
+    "id": 1,
+    "name": "Cow",
+    "model": "model.creature.quadraped.cow",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 2,
+    "name": "White Lamb",
+    "model": "model.creature.quadraped.lamb.female",
+    "rarity": 0,
+    "scale": 0.8
+  },
+  {
+    "id": 3,
+    "name": "Black lamb",
+    "model": "model.creature.quadraped.lamb.female.black",
+    "rarity": 0,
+    "scale": 0.8
+  },
+  {
+    "id": 4,
+    "name": "White sheep",
+    "model": "model.creature.quadraped.sheep.female",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 5,
+    "name": "Black sheep",
+    "model": "model.creature.quadraped.sheep.female.black",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 6,
+    "name": "Pinkie",
+    "model": "model.creature.quadraped.sheep.female",
+    "rarity": 1,
+    "scale": 0.4,
+    "effects": [
+      {
+        "type": "color",
+        "r": 255,
+        "g": 113,
+        "b": 181
+      },
+      {
+        "type": "light",
+        "r": 64,
+        "g": 0,
+        "b": 64
+      },
+      {
+        "type": "particle",
+        "particle": "runeJackal"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "White ram",
+    "model": "model.creature.quadraped.sheep.male",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 8,
+    "name": "Black ram",
+    "model": "model.creature.quadraped.sheep.male.black",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 9,
+    "name": "Easter bunny",
+    "model": "model.creature.quadraped.easterbunny",
+    "rarity": 1,
+    "scale": 0.7
+  },
+  {
+    "id": 10,
+    "name": "Skully",
+    "model": "model.resource.skull.human",
+    "rarity": 1,
+    "scale": 2,
+    "effects": [
+      {
+        "type": "ghost",
+        "mode": 1,
+        "alpha": 128
+      },
+      {
+        "type": "fire",
+        "size": 0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Mini-Enki",
+    "model": "model.creature.gmdark",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 12,
+    "name": "Worg",
+    "model": "model.creature.quadraped.wolf.worg",
+    "rarity": 0,
+    "scale": 0.2
+  },
+  {
+    "id": 13,
+    "name": "Gorilla",
+    "model": "model.creature.humanoid.gorilla.mountain",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 14,
+    "name": "Drake spirit",
+    "model": "model.creature.drake.spirit",
+    "rarity": 1,
+    "scale": 0.2,
+    "effects": [
+      {
+        "type": "ghost",
+        "mode": 1,
+        "alpha": 0
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Eagle spirit",
+    "model": "model.creature.eagle.spirit",
+    "rarity": 1,
+    "scale": 0.2,
+    "effects": [
+      {
+        "type": "ghost",
+        "mode": 1,
+        "alpha": 0
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cat",
+    "model": "model.creature.quadraped.cat.wild",
+    "rarity": 0,
+    "scale": 0.8
+  },
+  {
+    "id": 17,
+    "name": "Firecat",
+    "model": "model.creature.quadraped.cat.wild",
+    "rarity": 1,
+    "scale": 0.8,
+    "effects": [
+      {
+        "type": "color",
+        "r": 255,
+        "g": 0,
+        "b": 0
+      },
+      {
+        "type": "fire",
+        "size": 0
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Uttacha",
+    "model": "model.creature.spawn.uttacha",
+    "rarity": 1,
+    "scale": 0.1
+  },
+  {
+    "id": 19,
+    "name": "Mini-Magranon",
+    "model": "model.creature.humanoid.giant.juggernaut",
+    "rarity": 3,
+    "scale": 0.03
+  },
+  {
+    "id": 20,
+    "name": "Mini-Fo",
+    "model": "model.creature.humanoid.giant.manifestation",
+    "rarity": 3,
+    "scale": 0.03
+  },
+  {
+    "id": 21,
+    "name": "Mini-Vynora",
+    "model": "model.creature.humanoid.giant.epiphany",
+    "rarity": 3,
+    "scale": 0.04
+  },
+  {
+    "id": 22,
+    "name": "Mini-Libila",
+    "model": "model.creature.humanoid.giant.incarnation",
+    "rarity": 3,
+    "scale": 0.06
+  },
+  {
+    "id": 23,
+    "name": "Mini-Kyklops",
+    "model": "model.creature.humanoid.kyklops",
+    "rarity": 1,
+    "scale": 0.07
+  },
+  {
+    "id": 24,
+    "name": "Baby Nogump",
+    "model": "model.creature.humanoid.nogump.son",
+    "rarity": 1,
+    "scale": 0.15
+  },
+  {
+    "id": 25,
+    "name": "Avenger",
+    "model": "model.creature.humanoid.avenger.light",
+    "rarity": 1,
+    "scale": 0.06
+  },
+  {
+    "id": 26,
+    "name": "Sol demon",
+    "model": "model.creature.humanoid.demon.sol",
+    "rarity": 1,
+    "scale": 0.2
+  },
+  {
+    "id": 27,
+    "name": "Hyena",
+    "model": "model.creature.quadraped.hyena",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 28,
+    "name": "Skeleton",
+    "model": "model.creature.humanoid.human.skeleton",
+    "rarity": 1,
+    "scale": 0.3
+  },
+  {
+    "id": 29,
+    "name": "Hen",
+    "model": "model.creature.humanoid.hen",
+    "rarity": 0,
+    "scale": 0.5
+  },
+  {
+    "id": 30,
+    "name": "Rooster",
+    "model": "model.creature.humanoid.rooster",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 31,
+    "name": "Chick",
+    "model": "model.creature.humanoid.chicken",
+    "rarity": 0,
+    "scale": 1
+  },
+  {
+    "id": 32,
+    "name": "Wraith",
+    "model": "model.creature.humanoid.human.spirit.wraith",
+    "rarity": 1,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "ghost",
+        "mode": 0,
+        "alpha": 100
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Serpent",
+    "model": "model.creature.snake.serpent.sea",
+    "rarity": 3,
+    "scale": 0.1
+  },
+  {
+    "id": 34,
+    "name": "Shark",
+    "model": "model.creature.fish.shark.huge",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 35,
+    "name": "Seal",
+    "model": "model.creature.fish.seal",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 36,
+    "name": "Seal Cub",
+    "model": "model.creature.fish.seal.cub",
+    "rarity": 0,
+    "scale": 0.5
+  },
+  {
+    "id": 37,
+    "name": "Tortoise",
+    "model": "model.creature.quadraped.tortoise",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 38,
+    "name": "Crab",
+    "model": "model.creature.quadraped.crab",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 39,
+    "name": "Rift Jackal",
+    "model": "model.creature.humanoid.jackal.rift",
+    "rarity": 1,
+    "scale": 0.15
+  },
+  {
+    "id": 40,
+    "name": "Rift Beast",
+    "model": "model.creature.quadraped.beast.rift",
+    "rarity": 1,
+    "scale": 0.25
+  },
+  {
+    "id": 41,
+    "name": "Rift Ogre",
+    "model": "model.creature.humanoid.ogre.rift",
+    "rarity": 1,
+    "scale": 0.08
+  },
+  {
+    "id": 42,
+    "name": "Rat",
+    "model": "model.creature.quadraped.rat",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 43,
+    "name": "Brown Bear",
+    "model": "model.creature.quadraped.bear.brown",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 44,
+    "name": "Black Bear",
+    "model": "model.creature.quadraped.bear.black",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 45,
+    "name": "Boar",
+    "model": "model.creature.quadraped.boar.wild",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 46,
+    "name": "Wolf",
+    "model": "model.creature.quadraped.wolf.black",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 47,
+    "name": "Bug",
+    "model": "model.creature.quadraped.insect.cavebug",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 48,
+    "name": "Unicorn",
+    "model": "model.creature.quadraped.unicorn",
+    "rarity": 0,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "colorRandom"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Calf",
+    "model": "model.creature.quadraped.calf",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 50,
+    "name": "Dog",
+    "model": "model.creature.quadraped.dog",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 51,
+    "name": "Deer",
+    "model": "model.creature.quadraped.deer.female",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 52,
+    "name": "Stag",
+    "model": "model.creature.quadraped.deer.male",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 53,
+    "name": "Crocodile",
+    "model": "model.creature.quadraped.crocodile",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 54,
+    "name": "Anaconda",
+    "model": "model.creature.snake.anaconda",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 55,
+    "name": "Cobra",
+    "model": "model.creature.snake.kingcobra",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 56,
+    "name": "Bison",
+    "model": "model.creature.quadraped.bison",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 57,
+    "name": "Bull",
+    "model": "model.creature.quadraped.bull",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 58,
+    "name": "Cow",
+    "model": "model.creature.quadraped.cow",
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 59,
+    "name": "Deathcrawler",
+    "model": "model.creature.deathcrawler",
+    "rarity": 1,
+    "scale": 0.15
+  },
+  {
+    "id": 60,
+    "name": "Horse",
+    "models": [
+      "model.creature.quadraped.horse.white",
+      "model.creature.quadraped.horse.black",
+      "model.creature.quadraped.horse.grey",
+      "model.creature.quadraped.horse.brown",
+      "model.creature.quadraped.horse.gold",
+      "model.creature.quadraped.horse.bloodbay",
+      "model.creature.quadraped.horse.ebonyblack",
+      "model.creature.quadraped.horse.piebaldpinto"
+    ],
+    "rarity": 0,
+    "scale": 0.25
+  },
+  {
+    "id": 61,
+    "name": "Foal",
+    "models": [
+      "model.creature.quadraped.foal.white",
+      "model.creature.quadraped.foal.black",
+      "model.creature.quadraped.foal.grey",
+      "model.creature.quadraped.foal.brown",
+      "model.creature.quadraped.foal.gold",
+      "model.creature.quadraped.foal.bloodbay",
+      "model.creature.quadraped.foal.ebonyblack",
+      "model.creature.quadraped.foal.piebaldpinto"
+    ],
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 62,
+    "name": "Hell Horse",
+    "models": [
+      "model.creature.quadraped.horse.hell.white",
+      "model.creature.quadraped.horse.hell.black",
+      "model.creature.quadraped.horse.hell.grey",
+      "model.creature.quadraped.horse.hell.brown",
+      "model.creature.quadraped.horse.hell.gold",
+      "model.creature.quadraped.horse.hell.bloodbay",
+      "model.creature.quadraped.horse.hell.ebonyblack",
+      "model.creature.quadraped.horse.hell.piebaldpinto"
+    ],
+    "rarity": 1,
+    "scale": 0.25,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 0,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Lion",
+    "model": "model.creature.quadraped.lion.mountain",
+    "rarity": 0,
+    "scale": 0.5
+  },
+  {
+    "id": 64,
+    "name": "Pig",
+    "model": "model.creature.quadraped.pig",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 65,
+    "name": "Pheasant",
+    "model": "model.creature.humanoid.pheasant",
+    "rarity": 0,
+    "scale": 0.8
+  },
+  {
+    "id": 66,
+    "name": "Hell Hound",
+    "model": "model.creature.quadraped.dog.hell",
+    "rarity": 1,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 0,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Scorpion",
+    "model": "model.creature.multiped.scorpion",
+    "rarity": 0,
+    "scale": 0.15
+  },
+  {
+    "id": 68,
+    "name": "Hell Scorpious",
+    "model": "model.creature.multiped.scorpion.hell",
+    "rarity": 1,
+    "scale": 0.15,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 0,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Spider",
+    "model": "model.creature.multiped.spider.huge",
+    "rarity": 0,
+    "scale": 0.2
+  },
+  {
+    "id": 70,
+    "name": "Fog Spider",
+    "model": "model.creature.multiped.spider.fog",
+    "rarity": 1,
+    "scale": 0.2
+  },
+  {
+    "id": 71,
+    "name": "Lava Spider",
+    "model": "model.creature.multiped.spider.lava",
+    "rarity": 1,
+    "scale": 0.2,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 0,
+        "power": 127
+      },
+      {
+        "type": "fire",
+        "size": 0
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Lava Fiend",
+    "model": "model.creature.humanoid.lavacreature",
+    "rarity": 1,
+    "scale": 0.2,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 0,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Troll",
+    "model": "model.creature.humanoid.troll.standard",
+    "rarity": 0,
+    "scale": 0.2
+  },
+  {
+    "id": 74,
+    "name": "Troll King",
+    "model": "model.creature.humanoid.troll.king",
+    "rarity": 1,
+    "scale": 0.2
+  },
+  {
+    "id": 75,
+    "name": "Goblin",
+    "model": "model.creature.humanoid.goblin",
+    "rarity": 0,
+    "scale": 0.4
+  },
+  {
+    "id": 76,
+    "name": "Goblin Leader",
+    "model": "model.creature.humanoid.goblin.leader",
+    "rarity": 1,
+    "scale": 0.4
+  },
+  {
+    "id": 77,
+    "name": "Red Dragon",
+    "model": "model.creature.dragon.red",
+    "rarity": 3,
+    "scale": 0.15
+  },
+  {
+    "id": 78,
+    "name": "White Dragon",
+    "model": "model.creature.dragon.white",
+    "rarity": 3,
+    "scale": 0.15
+  },
+  {
+    "id": 79,
+    "name": "Blue Dragon",
+    "model": "model.creature.dragon.blue",
+    "rarity": 3,
+    "scale": 0.15
+  },
+  {
+    "id": 80,
+    "name": "Green Dragon",
+    "model": "model.creature.dragon.green",
+    "rarity": 3,
+    "scale": 0.15
+  },
+  {
+    "id": 81,
+    "name": "Black Dragon",
+    "model": "model.creature.dragon.black",
+    "rarity": 3,
+    "scale": 0.15
+  },
+  {
+    "id": 82,
+    "name": "Red Drake",
+    "model": "model.creature.drake.red",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 83,
+    "name": "White Drake",
+    "model": "model.creature.drake.white",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 84,
+    "name": "Blue Drake",
+    "model": "model.creature.drake.blue",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 85,
+    "name": "Green Drake",
+    "model": "model.creature.drake.green",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 86,
+    "name": "Black Drake",
+    "model": "model.creature.drake.black",
+    "rarity": 3,
+    "scale": 0.2
+  },
+  {
+    "id": 87,
+    "name": "Mini-Giant",
+    "model": "model.creature.humanoid.giant.forest",
+    "rarity": 1,
+    "scale": 0.1
+  },
+  {
+    "id": 88,
+    "name": "Freedom Guard",
+    "models": [
+      "model.creature.humanoid.human.guard.tower.female.free",
+      "model.creature.humanoid.human.guard.tower.male.free"
+    ],
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 89,
+    "name": "HotS Guard",
+    "models": [
+      "model.creature.humanoid.human.guard.tower.female.hots",
+      "model.creature.humanoid.human.guard.tower.male.hots"
+    ],
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 90,
+    "name": "MR Guard",
+    "models": [
+      "model.creature.humanoid.human.guard.tower.female.molr",
+      "model.creature.humanoid.human.guard.tower.male.molr"
+    ],
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 91,
+    "name": "JK Guard",
+    "models": [
+      "model.creature.humanoid.human.guard.tower.female.jenn",
+      "model.creature.humanoid.human.guard.tower.male.jenn"
+    ],
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 92,
+    "name": "Braaaains",
+    "model": "model.creature.humanoid.human.player.zombie",
+    "rarity": 0,
+    "scale": 0.3
+  },
+  {
+    "id": 93,
+    "name": "Charlie",
+    "model": "model.creature.quadraped.horse.white",
+    "rarity": 1,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "ghost",
+        "mode": 1,
+        "alpha": 128
+      },
+      {
+        "type": "light",
+        "r": 100,
+        "g": 100,
+        "b": 150,
+        "power": 50
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Hellycorn",
+    "model": "model.creature.quadraped.unicorn",
+    "rarity": 1,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "color",
+        "r": 128,
+        "g": 0,
+        "b": 0
+      },
+      {
+        "type": "light",
+        "r": 128,
+        "g": 0,
+        "b": 0,
+        "power": 127
+      },
+      {
+        "type": "fire",
+        "size": 0
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Animated Shard",
+    "model": "model.light.token",
+    "rarity": 1,
+    "scale": 0.5,
+    "effects": [
+      {
+        "type": "light",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Pink Dragon",
+    "model": "model.creature.dragon.white",
+    "rarity": 3,
+    "scale": 0.15,
+    "effects": [
+      {
+        "type": "color",
+        "r": 128,
+        "g": 0,
+        "b": 80
+      }
+    ]
+  }
+]
