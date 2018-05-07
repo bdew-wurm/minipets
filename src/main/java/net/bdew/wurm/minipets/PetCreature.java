@@ -1,11 +1,10 @@
 package net.bdew.wurm.minipets;
 
 import com.wurmonline.server.creatures.CreatureTemplate;
-import com.wurmonline.server.creatures.CreatureTypes;
+import com.wurmonline.shared.constants.CreatureTypes;
 import org.gotti.wurmunlimited.modloader.ReflectionUtil;
 import org.gotti.wurmunlimited.modsupport.CreatureTemplateBuilder;
 
-import static com.wurmonline.server.creatures.CreatureTypes.C_TYPE_INVULNERABLE;
 
 public class PetCreature {
     public static int templateId;
@@ -16,7 +15,7 @@ public class PetCreature {
                 .name("Mini Pet")
                 .description("A cute small creature that likes the company of humans")
                 .modelName("model")
-                .types(new int[]{CreatureTypes.C_TYPE_SWIMMING, C_TYPE_INVULNERABLE})
+                .types(new int[]{CreatureTypes.C_TYPE_SWIMMING, CreatureTypes.C_TYPE_INVULNERABLE})
                 .defaultSkills()
                 .vision((short) 5)
                 .dimension((short) 10, (short) 10, (short) 10)

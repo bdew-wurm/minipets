@@ -875,5 +875,127 @@
         "b": 80
       }
     ]
+  },
+  {
+    "id": 97,
+    "name": "Spikey",
+    "model": "model.unknown",
+    "rarity": 1,
+    "scale": 0.3,
+    "effects": [
+      {
+        "type": "colorRandom"
+      },
+      {
+        "type": "light",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Fire Elemental",
+    "model": "model.decoration.gem.ruby",
+    "rarity": 1,
+    "scale": 0.5,
+    "effects": [
+      {
+        "type": "fire",
+        "size": 0
+      },
+      {
+        "type": "particle",
+        "particle": "copperBrazierSparks"
+      },
+      {
+        "type": "light",
+        "r": 255,
+        "g": 128,
+        "b": 128,
+        "power": 127
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Ice Elemental",
+    "model": "model.resource.crystal",
+    "rarity": 1,
+    "scale": 0.5,
+    "effects": [
+      {
+        "type": "particle",
+        "particle": "iceTail1"
+      },
+      {
+        "type": "particle",
+        "particle": "fogSpider"
+      },
+      {
+        "type": "color",
+        "r": 0,
+        "g": 0,
+        "b": 255
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Sparky",
+    "model": "model.decoration.gem.emerald.star",
+    "rarity": 1,
+    "scale": 0.4,
+    "effects": [
+      {
+        "type": "particle",
+        "particle": "lightningTail1"
+      },
+      {
+        "type": "color",
+        "r": 128,
+        "g": 128,
+        "b": 255
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Hell Chick",
+    "model": "model.creature.humanoid.hen",
+    "rarity": 1,
+    "scale": 0.7,
+    "effects": [
+      {
+        "type": "color",
+        "r": 128,
+        "g": 0,
+        "b": 0
+      },
+      {
+        "type": "light",
+        "r": 128,
+        "g": 0,
+        "b": 0,
+        "power": 127
+      },
+      {
+        "type": "fire",
+        "size": 0
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Rocky",
+    "models": [
+      "model.terrain.decoration.rock1",
+      "model.terrain.decoration.rock2",
+      "model.terrain.decoration.rock3"
+    ],
+    "rarity": 0,
+    "scale": 0.5
   }
 ]
