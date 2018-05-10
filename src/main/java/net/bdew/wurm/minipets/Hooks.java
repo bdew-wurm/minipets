@@ -33,6 +33,14 @@ public class Hooks {
         }
     }
 
+    public static void sendAdditionalStuff(Communicator comm, Long wurmId, PetType type, boolean decorative) {
+        int scale = (int) (type.scale * 64f);
+        if (scale > 255) scale = 255;
+        if (scale < 0) scale = 0;
+        comm.sendResize(wurmId, (byte) scale, (byte) scale, (byte) scale);
+        type.effects.forEach(eff -> eff.doSend(comm, wurmId, decorative));
+    }
+
     public static void addCreatureHook(VirtualZone vz, long creatureId) {
         Creature watcher = vz.getWatcher();
         if (watcher != null && watcher.isPlayer() && watcher.hasLink()) {
@@ -41,19 +49,21 @@ public class Hooks {
                 Creature creature = Server.getInstance().getCreature(creatureId);
                 if (creature.getTemplate() == PetCreature.template) {
                     MiniPetAIData data = MiniPetAIData.get(creature);
-
                     if (data != null && data.getType() != null) {
-                        int scale = (int) (data.getType().scale * 64f);
-                        if (scale > 255) scale = 255;
-                        if (scale < 0) scale = 0;
-                        comm.sendResize(creatureId, (byte) scale, (byte) scale, (byte) scale);
-                        data.getType().effects.forEach(eff -> eff.doSend(comm, creature));
+                        sendAdditionalStuff(comm, creatureId, data.getType(), false);
                     }
-
                 }
             } catch (NoSuchPlayerException | NoSuchCreatureException ignored) {
-
             }
+        }
+    }
+
+    public static boolean preSendItemHook(Communicator comm, Item item) {
+        if ((item.getTemplateId() == PetItems.petDecorativeId)) {
+            Decorative.sendDecorative(comm, item, item.getPosX(), item.getPosY(), item.getPosZ(), item.getRotation());
+            return false;
+        } else {
+            return true;
         }
     }
 
@@ -83,10 +93,15 @@ public class Hooks {
         }
     }
 
-
-    public static void removeItemHook(Communicator comm, Item item) {
+    public static boolean removeItemHook(Communicator comm, Item item) {
         if (item.getTemplateId() == PetItems.petEggId && (item.lastOwner == -10L || item.lastOwner == 0L)) {
             comm.sendRemoveEffect(item.getWurmId());
+            return true;
+        } else if (item.getTemplateId() == PetItems.petDecorativeId) {
+            Decorative.removeDecorative(comm, item);
+            return false;
+        } else {
+            return true;
         }
     }
 

@@ -1,11 +1,13 @@
 package net.bdew.wurm.minipets;
 
 import com.wurmonline.server.creatures.Communicator;
+import com.wurmonline.server.players.Player;
 import javassist.CannotCompileException;
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
+import net.bdew.wurm.minipets.actions.ConvertPetAction;
 import net.bdew.wurm.minipets.actions.HatchEggAction;
 import net.bdew.wurm.minipets.actions.HidePetAction;
 import net.bdew.wurm.minipets.actions.SummonPetAction;
@@ -18,7 +20,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MiniPets implements WurmServerMod, Configurable, PreInitable, Initable, ServerStartedListener, ItemTemplatesCreatedListener, PlayerMessageListener {
+public class MiniPets implements WurmServerMod, Configurable, PreInitable, Initable, ServerStartedListener, ItemTemplatesCreatedListener, PlayerMessageListener, PlayerLoginListener, ServerPollListener {
     private static final Logger logger = Logger.getLogger("MiniPets");
 
     public static void logException(String msg, Throwable e) {
@@ -64,7 +66,7 @@ public class MiniPets implements WurmServerMod, Configurable, PreInitable, Inita
                         @Override
                         public void edit(MethodCall m) throws CannotCompileException {
                             if (m.getMethodName().equals("sendItem")) {
-                                m.replace("$_ = $proceed($$); net.bdew.wurm.minipets.Hooks.sendItemHook(this.watcher.getCommunicator(), item);");
+                                m.replace("if (net.bdew.wurm.minipets.Hooks.preSendItemHook(this.watcher.getCommunicator(), item)) { $_ = $proceed($$); net.bdew.wurm.minipets.Hooks.sendItemHook(this.watcher.getCommunicator(), item); }");
                             }
                         }
                     });
@@ -74,7 +76,7 @@ public class MiniPets implements WurmServerMod, Configurable, PreInitable, Inita
                         @Override
                         public void edit(MethodCall m) throws CannotCompileException {
                             if (m.getMethodName().equals("sendRemoveItem")) {
-                                m.replace("$_ = $proceed($$); net.bdew.wurm.minipets.Hooks.removeItemHook(this.watcher.getCommunicator(), item);");
+                                m.replace("if (net.bdew.wurm.minipets.Hooks.removeItemHook(this.watcher.getCommunicator(), item)) $_ = $proceed($$);");
                             }
                         }
                     });
@@ -96,6 +98,7 @@ public class MiniPets implements WurmServerMod, Configurable, PreInitable, Inita
         ModActions.registerAction(new SummonPetAction());
         ModActions.registerAction(new HidePetAction());
         ModActions.registerAction(new HatchEggAction());
+        ModActions.registerAction(new ConvertPetAction());
     }
 
     @Override
@@ -104,6 +107,7 @@ public class MiniPets implements WurmServerMod, Configurable, PreInitable, Inita
             PetTypes.load(typesFile);
             PetCreature.register();
             PetItems.register();
+            Compat3D.installDisplayHook();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -118,5 +122,20 @@ public class MiniPets implements WurmServerMod, Configurable, PreInitable, Inita
     @Override
     public MessagePolicy onPlayerMessage(Communicator communicator, String message, String title) {
         return CommandHandler.handleCommands(communicator, message);
+    }
+
+    @Override
+    public void onPlayerLogin(Player player) {
+        EffectTracker.addPlayer(player);
+    }
+
+    @Override
+    public void onPlayerLogout(Player player) {
+        EffectTracker.removePlayer(player);
+    }
+
+    @Override
+    public void onServerPoll() {
+        EffectTracker.tick();
     }
 }

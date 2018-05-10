@@ -13,7 +13,7 @@ public class PetCreature {
     static void register() throws NoSuchFieldException, IllegalAccessException {
         template = new CreatureTemplateBuilder("bdew.minipet")
                 .name("Mini Pet")
-                .description("A cute small creature that likes the company of humans")
+                .description("A cute small creature that likes the company of humans.")
                 .modelName("model")
                 .types(new int[]{CreatureTypes.C_TYPE_SWIMMING, CreatureTypes.C_TYPE_INVULNERABLE})
                 .defaultSkills()

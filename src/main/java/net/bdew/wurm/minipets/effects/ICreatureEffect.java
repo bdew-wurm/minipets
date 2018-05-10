@@ -1,11 +1,12 @@
 package net.bdew.wurm.minipets.effects;
 
 import com.wurmonline.server.creatures.Communicator;
-import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.support.JSONObject;
 
 public interface ICreatureEffect {
-    void doSend(Communicator comm, Creature creature);
+    void doSend(Communicator comm, Long wurmId, boolean decorative);
+
+    boolean needToRefreshOnItems();
 
     public static ICreatureEffect read(JSONObject effObj) {
         switch (effObj.getString("type")) {

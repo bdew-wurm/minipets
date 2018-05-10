@@ -1,6 +1,7 @@
 package net.bdew.wurm.minipets;
 
 import com.wurmonline.mesh.Tiles;
+import com.wurmonline.server.Items;
 import com.wurmonline.server.Server;
 import com.wurmonline.server.creatures.Communicator;
 import com.wurmonline.server.creatures.Creature;
@@ -8,6 +9,7 @@ import com.wurmonline.server.creatures.Creatures;
 import com.wurmonline.server.items.Item;
 import com.wurmonline.server.items.ItemFactory;
 import com.wurmonline.server.zones.VolaTile;
+import com.wurmonline.server.zones.Zone;
 import com.wurmonline.server.zones.Zones;
 import org.gotti.wurmunlimited.modloader.interfaces.MessagePolicy;
 
@@ -31,6 +33,23 @@ public class CommandHandler {
                         } else {
                             communicator.sendNormalServerMessage(String.format("Pet #%d (%s) has invalid type, deleting", c.getWurmId(), c.getName()));
                             c.destroy();
+                        }
+                    }
+                }
+
+                communicator.sendNormalServerMessage("... and items ...");
+
+                for (Item i : Items.getAllItems()) {
+                    if (i.getTemplateId() == PetItems.petDecorativeId) {
+                        Item parent = i.getParentOrNull();
+                        if (parent == null || parent.getTemplate().getName().equals("item hook")) {
+                            Item toRefresh = i.getTopParentOrNull();
+                            if (toRefresh == null) toRefresh = i;
+                            Zone zone = Zones.getZone(toRefresh.getTilePos(), toRefresh.isOnSurface());
+                            if (zone != null) {
+                                zone.removeItem(toRefresh);
+                                zone.addItem(toRefresh);
+                            }
                         }
                     }
                 }

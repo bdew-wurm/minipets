@@ -1,7 +1,6 @@
 package net.bdew.wurm.minipets.effects;
 
 import com.wurmonline.server.creatures.Communicator;
-import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.support.JSONObject;
 
 import java.util.Random;
@@ -22,10 +21,14 @@ public class RandomColorEffect implements ICreatureEffect {
         );
     }
 
+    @Override
+    public void doSend(Communicator comm, Long wurmId, boolean decorative) {
+        rng.setSeed(wurmId);
+        comm.sendRepaint(wurmId, (byte) rng.nextInt(256), (byte) rng.nextInt(256), (byte) rng.nextInt(256), a, t);
+    }
 
     @Override
-    public void doSend(Communicator comm, Creature creature) {
-        rng.setSeed(creature.getWurmId());
-        comm.sendRepaint(creature.getWurmId(), (byte) rng.nextInt(256), (byte) rng.nextInt(256), (byte) rng.nextInt(256), a, t);
+    public boolean needToRefreshOnItems() {
+        return false;
     }
 }

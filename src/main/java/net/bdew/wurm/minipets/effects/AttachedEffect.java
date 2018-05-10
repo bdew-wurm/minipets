@@ -1,7 +1,6 @@
 package net.bdew.wurm.minipets.effects;
 
 import com.wurmonline.server.creatures.Communicator;
-import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.support.JSONObject;
 
 public abstract class AttachedEffect implements ICreatureEffect {
@@ -16,13 +15,23 @@ public abstract class AttachedEffect implements ICreatureEffect {
     }
 
     @Override
-    public void doSend(Communicator comm, Creature creature) {
-        comm.sendAttachEffect(creature.getWurmId(), effectType, data0, data1, data2, data3);
+    public void doSend(Communicator comm, Long wurmId, boolean decorative) {
+        comm.sendAttachEffect(wurmId, effectType, data0, data1, data2, data3);
+    }
+
+    @Override
+    public boolean needToRefreshOnItems() {
+        return false;
     }
 
     static class Fire extends AttachedEffect {
         public Fire(int size) {
             super((byte) 5, (byte) 0, (byte) 0, (byte) 0, (byte) size);
+        }
+
+        @Override
+        public boolean needToRefreshOnItems() {
+            return true;
         }
 
         public static Fire read(JSONObject effObj) {

@@ -1,7 +1,6 @@
 package net.bdew.wurm.minipets.effects;
 
 import com.wurmonline.server.creatures.Communicator;
-import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.support.JSONObject;
 
 public class ColorEffect implements ICreatureEffect {
@@ -26,7 +25,12 @@ public class ColorEffect implements ICreatureEffect {
     }
 
     @Override
-    public void doSend(Communicator comm, Creature creature) {
-        comm.sendRepaint(creature.getWurmId(), r, g, b, a, t);
+    public void doSend(Communicator comm, Long wurmId, boolean decorative) {
+        comm.sendRepaint(wurmId, r, g, b, a, t);
+    }
+
+    @Override
+    public boolean needToRefreshOnItems() {
+        return false;
     }
 }

@@ -8,8 +8,8 @@ import org.gotti.wurmunlimited.modsupport.ItemTemplateBuilder;
 import java.io.IOException;
 
 public class PetItems {
-    public static ItemTemplate petEgg, petLeash;
-    public static int petEggId, petLeashId;
+    public static ItemTemplate petEgg, petLeash, petDecorative;
+    public static int petEggId, petLeashId, petDecorativeId;
 
     static void register() throws IOException {
         petEgg = new ItemTemplateBuilder("bdew.pets.egg")
@@ -49,6 +49,27 @@ public class PetItems {
                 .build();
 
         petLeashId = petLeash.getTemplateId();
+
+        petDecorative = new ItemTemplateBuilder("bdew.pets.deco")
+                .name("pet", "pets", "A cute small creature that likes the company of humans.")
+                .imageNumber((short) 60)
+                .weightGrams(500)
+                .dimensions(1, 1, 1)
+                .decayTime(3024000L)
+                .value(10000)
+                .isTraded(false)
+                .itemTypes(new short[]{
+                        ItemTypes.ITEM_TYPE_INDESTRUCTIBLE,
+                        ItemTypes.ITEM_TYPE_HASDATA,
+                        ItemTypes.ITEM_TYPE_NAMED,
+                        ItemTypes.ITEM_TYPE_DECORATION
+                })
+                .material(ItemMaterials.MATERIAL_MAGIC)
+                .modelName("model.")
+                .behaviourType((short) 1)
+                .build();
+
+        petDecorativeId = petDecorative.getTemplateId();
     }
 }
 
