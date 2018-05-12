@@ -62,7 +62,9 @@ public class PetItems {
                         ItemTypes.ITEM_TYPE_INDESTRUCTIBLE,
                         ItemTypes.ITEM_TYPE_HASDATA,
                         ItemTypes.ITEM_TYPE_NAMED,
-                        ItemTypes.ITEM_TYPE_DECORATION
+                        ItemTypes.ITEM_TYPE_DECORATION,
+                        ItemTypes.ITEM_TYPE_PLANTABLE,
+                        ItemTypes.ITEM_TYPE_TURNABLE
                 })
                 .material(ItemMaterials.MATERIAL_MAGIC)
                 .modelName("model.")
