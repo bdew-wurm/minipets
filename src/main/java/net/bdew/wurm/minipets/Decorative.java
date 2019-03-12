@@ -15,15 +15,18 @@ public class Decorative {
         String model = "model.";
 
         if (type != null) {
-            if (type.models.size() == 1)
+            if (type.models.size() == 1) {
                 model = type.models.get(0);
-            rng.setSeed(item.getWurmId());
-            model = type.models.get(rng.nextInt(type.models.size()));
+            } else {
+                rng.setSeed(item.getWurmId());
+                model = type.models.get(rng.nextInt(type.models.size()));
+            }
         }
 
         comm.sendNewCreature(
                 item.getWurmId(),
-                String.format("%s (%s)", item.getName(), item.getDescription()),
+                item.getName(),
+                item.getDescription(),
                 model,
                 x,
                 y,
@@ -33,7 +36,7 @@ public class Decorative {
                 (byte) (item.isOnSurface() ? 0 : -1),
                 false,
                 false,
-                false,
+                true,
                 (byte) (item.getData2() & 0xFF),
                 0L,
                 (byte) 0,

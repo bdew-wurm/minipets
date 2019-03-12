@@ -84,9 +84,9 @@ public class MiniPetAI extends CreatureAI {
                 creature.setPositionY(newY);
                 creature.setPositionZ(newZ);
 
-                int deltaX = (int) (newX * 10.0F) - (int) (creatureX * 10.0F);
-                int deltaY = (int) (newY * 10.0F) - (int) (creatureY * 10.0F);
-                int deltaZ = (int) (newZ * 10.0F) - (int) (creatureZ * 10.0F);
+                int deltaX = (int) (newX * 100.0F) - (int) (creatureX * 100.0F);
+                int deltaY = (int) (newY * 100.0F) - (int) (creatureY * 100.0F);
+                int deltaZ = (int) (newZ * 100.0F) - (int) (creatureZ * 100.0F);
 
                 creature.moved(deltaX, deltaY, deltaZ, newTileX - oldTileX, newTileY - oldTileY);
             } else {
