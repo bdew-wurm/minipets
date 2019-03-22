@@ -61,8 +61,8 @@ public class MiniPetAI extends CreatureAI {
                     moveY = diffY - 2.0F;
                 }
 
-                float modX = (float) Math.sin(newRot * D2R) * Math.abs(moveX + Server.rand.nextFloat());
-                float modY = -((float) Math.cos(newRot * D2R)) * Math.abs(moveY + Server.rand.nextFloat());
+                float modX = (float) Math.sin(newRot * D2R) * Math.abs(moveX - 0.5f + Server.rand.nextFloat());
+                float modY = -((float) Math.cos(newRot * D2R)) * Math.abs(moveY - 0.5f + Server.rand.nextFloat());
 
                 float newX = creatureX + modX;
                 float newY = creatureY + modY;
@@ -84,11 +84,8 @@ public class MiniPetAI extends CreatureAI {
                 creature.setPositionY(newY);
                 creature.setPositionZ(newZ);
 
-                int deltaX = (int) (newX * 100.0F) - (int) (creatureX * 100.0F);
-                int deltaY = (int) (newY * 100.0F) - (int) (creatureY * 100.0F);
-                int deltaZ = (int) (newZ * 100.0F) - (int) (creatureZ * 100.0F);
-
-                creature.moved(deltaX, deltaY, deltaZ, newTileX - oldTileX, newTileY - oldTileY);
+                creature.moved(newX - creatureX, newY - creatureY, newZ - creatureZ,
+                        newTileX - oldTileX, newTileY - oldTileY);
             } else {
                 creature.moved(0, 0, 0, 0, 0);
             }
