@@ -22,7 +22,7 @@ public class PetCreature {
                 .speed(1.5f)
                 .moveRate(0)
                 .aggressive(0)
-                .baseCombatRating(99f)
+                .baseCombatRating(0f)
                 .build();
 
 
